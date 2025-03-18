@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000/api/v1'
+      '/api': 'https://video-sharehub-1.onrender.com'
     }
   }
 })
