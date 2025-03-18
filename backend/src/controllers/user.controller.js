@@ -112,10 +112,10 @@ const loginUser = asyncHandler(async(req, res) => {
     });
 
     if (!user) {
-        throw new ApiError(404, "User doesnot exist.");
+        throw new ApiError(404, "User does not exist.");
     }
 
-    const isPasswordCorrect = await user.comparePassword(password);
+    const isPasswordCorrect = await user.comparePassword(password, user?.password);
 
     if (!isPasswordCorrect) {
         throw new ApiError(401, "Invalid user credentials.");
